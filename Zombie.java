@@ -1,10 +1,18 @@
 public class Zombie {
   private int eyes;
   private boolean brain;
-  private String weapon;
+  private WeaponType weapon;
+  enum WeaponType{ 
+    KNIFE, BAT, HATCHET;
+  }
 
-  // Look into using an ArrayList as a configuration parameter
-  Zombie(int e, boolean b, String w) {
+  Zombie() {
+    setEyes(2); 
+    setBrain(false); 
+    setWeapon(WeaponType.KNIFE); 
+  }
+
+  Zombie(int e, boolean b, WeaponType w) {
     setEyes(e);
     setBrain(b);
     setWeapon(w);
@@ -18,7 +26,7 @@ public class Zombie {
     return this.brain;
   }
 
-  public String getWeapon() {
+  public WeaponType getWeapon() {
     return this.weapon;
   }
 
@@ -30,7 +38,7 @@ public class Zombie {
     this.brain = b;
   }
 
-  public void setWeapon(String w) {
+  public void setWeapon(WeaponType w) {
     this.weapon = w;
   }
 
@@ -41,14 +49,5 @@ public class Zombie {
       return false;
     }
   }
-
-  public static void main(String[] str) {
-    System.out.println("Began the program");
-    Zombie z = new Zombie(1, false, "Knife");
-    if (z.isBrainless()) {
-      System.out.println("The zombie has no brain!!!");
-    } else {
-      System.out.println("The zombie has a brain!!!");
-    }
-  }
+  
 }
