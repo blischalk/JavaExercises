@@ -5,7 +5,12 @@ public class BooksEx{
   public static void main(String[] args) {
     BooksEx be = new BooksEx();
     be.populateList();
+    System.out.println("Sorting by title using comparable.");
     Collections.sort(be.b);
+    for(BookInfo t: be.b)
+      System.out.println(t.getTitle());
+    Collections.sort(be.b, new GenreSort());
+    System.out.println("Sorting by genre using a comparator.");
     for(BookInfo t: be.b)
       System.out.println(t.getTitle());
   }
@@ -18,8 +23,8 @@ public class BooksEx{
         String[] a = line.split("/");
         BookInfo bi = new BookInfo();
         bi.setTitle(a[0]);
-        bi.setWriter(a[1]);
-        bi.setGenre(a[2]);
+        bi.setGenre(a[1]);
+        bi.setWriter(a[2]);
         b.add(bi);
       }
       br.close();
@@ -50,5 +55,11 @@ class BookInfo implements Comparable<BookInfo>{
   }
   public int compareTo(BookInfo bi) {
     return title.compareTo(bi.getTitle());
+  }
+}
+
+class GenreSort implements Comparator<BookInfo> {
+  public int compare(BookInfo f, BookInfo s) {
+    return f.getGenre().compareTo(s.getGenre());
   }
 }
