@@ -1,0 +1,45 @@
+Interfaces:
+Collection
+List
+Queue
+Set
+Map
+NavigableSet
+SortedSet
+SortedMap
+NavigableMap
+ConcurrentMap
+ConcurrentNavigableMap
+
+Concrete classes:
+
+Maps:
+HashMap
+ - One null key and unlimited null values
+Hashtable
+ - Synchronized
+ - No null keys or values
+TreeMap
+ - In Ascending key order
+ - Sorted according to the natural order of the key's class or by a comparator.
+ - Not synchronized.
+LinkedHashMap
+ - Subclass of HashMap
+ - Predictable iteration order.
+
+Sets:
+HashSet
+LinkedHashSet
+TreeSet
+
+Lists:
+ArrayList
+Vector
+LinkedList
+
+Queues:
+PriorityQueue
+
+Utilities:
+Collections
+Arrays
