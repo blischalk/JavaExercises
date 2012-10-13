@@ -39,6 +39,13 @@ LinkedList
 
 Queues:
 PriorityQueue
+ - Ordered by natural order or according to a Comparator.
+ - Does not permit null elements.
+ - When using natural ordering, does not permit insertion of non-comparable objects.
+ - The head is the least element with respect to the specified ordering.
+ - Ties are broken arbitrarily.
+ - poll, remove, peek, and element access the element at the head of the queue.
+ - The Iterator provided in method iterator() is not quaranteed to traverse the elements in any particular order.  use Arrays.sort(pq.toArray()) if you need ordering.
 
 Utilities:
 Collections
